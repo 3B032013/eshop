@@ -14,6 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         //
+        print('index');
     }
 
     /**
@@ -22,6 +23,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+        print('create');
     }
 
     /**
@@ -30,6 +32,7 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         //
+        print('store');
     }
 
     /**
@@ -38,6 +41,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        print('show');
     }
 
     /**
@@ -46,6 +50,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         //
+        print('edit');
     }
 
     /**
@@ -54,6 +59,7 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, Product $product)
     {
         //
+        print('update');
     }
 
     /**
@@ -62,5 +68,6 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+        print('destroy');
     }
 }
