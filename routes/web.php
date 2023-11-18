@@ -18,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('Products',ProductController::class);
+Route::resource('Products',ProductController::class)->only([
+    'index','show','store','update','destroy'
+]);
 #products.index
 #URL:Products | HTTP方法:GET|HEAD | 串接的控制器:ProductController@index
 
