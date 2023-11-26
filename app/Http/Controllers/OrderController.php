@@ -39,9 +39,11 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Order $order)
+    public function show($orderId)
     {
-        //
+        $order = Order::with('orderItems.product.category')->where('id',$orderId)->get()->firstOrFail();;
+        $data = ['order' => $order];
+        return view('orders.show',$data);
     }
 
     /**

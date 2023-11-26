@@ -9,11 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __("所有訂單") }}<br>
-                    @foreach ($orders as $order)
-                        訂單id：{{$order->id}}<br>
-                        訂單下訂時間：{{$order->created_at}}<br>
-                        <a href={{ route('Orders.show',$order->id) }}>點擊查看訂單內容</a>
+                    {{ __("訂單編號 $order->id 的訂單內容") }}<br><br>
+                    @foreach ($order->orderItems as $orderItem)
+                        商品類別：{{$orderItem->product->category->name}}<br>
+                        商品：{{$orderItem->product->name}}
                         <br><br>
                     @endforeach
                 </div>
