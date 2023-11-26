@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('CartItems',CartItemController::class);
 });
 
 require __DIR__.'/auth.php';
@@ -97,3 +99,5 @@ Route::delete('Products/{Product}',[ProductController::class,'destroy'])->name("
 
 #products.destroy
 #destroy方法的作用是從資料庫中刪除指定的資源，像是刪除不需要的產品、公告
+
+
