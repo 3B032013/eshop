@@ -14,8 +14,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::id();
-        $orders = Order::where('user_id',$user_id)->get();
+//        $user_id = Auth::id();
+//        $orders = Order::where('user_id',$user_id)->get();
+        $orders = auth()->user()->orders;
         $data = ['orders' => $orders];
         return view('orders.index',$data);
     }
