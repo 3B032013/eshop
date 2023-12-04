@@ -42,7 +42,8 @@ class OrderController extends Controller
      */
     public function show($orderId)
     {
-        $order = Order::with('orderItems.product.category')->where('id',$orderId)->get()->firstOrFail();;
+//        $order = Order::with('orderItems.product.category')->where('id',$orderId)->get()->firstOrFail();
+        $order = auth()->user()->orders()->with('orderItems')->findOrFail($orderId);
         $data = ['order' => $order];
         return view('orders.show',$data);
     }
