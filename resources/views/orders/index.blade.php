@@ -13,7 +13,7 @@
                     @foreach ($orders as $order)
                         訂單id：{{$order->id}}<br>
                         訂單下訂時間：{{$order->created_at}}<br>
-                        <a href={{ route('Orders.show',$order->id) }}>點擊查看訂單內容</a>
+                        <a href={{ route('orders.show',$order->id) }}>點擊查看訂單內容</a>
                         <br><br>
                     @endforeach
                 </div>
